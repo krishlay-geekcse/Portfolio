@@ -87,7 +87,7 @@ const ABOUT_HIGHLIGHTS = [
 ]
 
 const STATS = [
-  { end: 3, suffix: '+', label: 'Projects Built' },
+  { end: 10, suffix: '+', label: 'Projects Built' },
   { end: 10, suffix: '+', label: 'Technologies' },
   { end: 1000, suffix: '+', label: 'Lines of Code' },
 ]
