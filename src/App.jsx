@@ -314,9 +314,9 @@ const App = () => {
   const [parallax, setParallax] = useState({ x: 0, y: 0 })
   const [theme, setTheme] = useState(() => {
     if (typeof window !== 'undefined') {
-      return localStorage.getItem('portfolio-theme') || 'dark'
+      return localStorage.getItem('portfolio-theme') || 'light'
     }
-    return 'dark'
+    return 'light'
   })
 
   useEffect(() => {
