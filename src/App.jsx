@@ -4,7 +4,7 @@ import profileImg from './assets/profile.jpeg'
 import wanderlustImg from './assets/wanderlust.jpeg'
 import notesImg from './assets/notes.jpeg'
 import photoEditorImg from './assets/photoedit.jpeg'
-import resumePdf from './assets/Krishlay_Singh_Resume new.pdf'
+import resumePdf from './KrishlayNEW.pdf'
 
 /* ─── Data ─── */
 const ROLES = ['Full Stack Developer', 'React.js Engineer', 'Next.js Developer', ]
