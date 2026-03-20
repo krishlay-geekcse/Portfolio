@@ -60,6 +60,7 @@ const PROJECTS = [
     accent: '#a0a0a0',
     img: photoEditorImg,
     github: 'https://github.com/krishlay-geekcse/PhotoEditor',
+    liveDemo: 'https://simplephotoedit.netlify.app',
   },
 ]
 
