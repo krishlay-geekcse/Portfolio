@@ -473,6 +473,13 @@
   background: rgba(241, 245, 249, 0.8);
 }
 
+[data-theme="light"] .project-live-btn {
+  background: rgb(72, 36, 145);
+  color: #f8fafc;
+  border: 1px solid rgb(72, 36, 145);
+  box-shadow: 0 8px 20px rgba(72, 36, 145, 0.45);
+}
+
 [data-theme="light"] .project-stack span {
   background: rgba(241, 245, 249, 0.9);
   color: #3730a3;
@@ -1429,6 +1436,34 @@ li::marker {
   background: rgba(255, 255, 255, 0.08);
   color: #d0d0d0;
   transform: translate(1px, -1px);
+}
+
+.project-actions {
+  margin-top: 0.9rem;
+}
+
+.project-live-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 0.8rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: #f8fafc;
+  background: rgb(72, 36, 145);
+  border: 1px solid rgb(72, 36, 145);
+  box-shadow: 0 8px 20px rgba(72, 36, 145, 0.45);
+  transition: all var(--transition-fast);
+}
+
+.project-live-btn:hover {
+  transform: translateY(-1px);
+  background: rgb(118, 60, 230);
+  border-color: rgb(118, 60, 230);
+  box-shadow: 0 10px 24px rgba(118, 60, 230, 0.5);
 }
 
 .project-card h3 {

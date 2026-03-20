@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef, useCallback } from 'react'
 import './App.css'
 import profileImg from './assets/profile.jpeg'
-import wanderlustImg from './assets/wanderlust.jpeg'
+import studentHubImg from './assets/StudentHub.jpeg'
 import notesImg from './assets/notes.jpeg'
 import photoEditorImg from './assets/photoedit.jpeg'
 import resumePdf from './assets/KrishlayNEW.pdf'
@@ -35,12 +35,13 @@ const SKILLS = {
 const PROJECTS = [
   {
     num: '01',
-    title: 'Wanderlust',
-    desc: 'A full-stack travel listing platform with user authentication, CRUD operations for listings, EJS-based server-side rendering, and a MongoDB backend for scalable data management.',
-    stack: ['Node.js', 'Express.js', 'MongoDB', 'EJS', 'CSS'],
+    title: 'StudentHub',
+    desc: 'StudentHub is a smart platform that helps students discover essential services like PGs, hostels, mess facilities, restaurants, laundry, and medical stores near their college. It provides location-based search, map integration, and an AI chatbot to help students quickly find reliable services around campus across India.',
+    stack: ['React.js', 'Node.js', 'Map Integration', 'AI Chatbot', 'Location Search'],
     accent: '#b0b0b0',
-    img: wanderlustImg,
-    github: 'https://github.com/krishlay-geekcse/wanderlust',
+    img: studentHubImg,
+    github: 'https://github.com/krishlay-geekcse/StudentHub',
+    liveDemo: 'https://studenthubnest.netlify.app',
   },
   {
     num: '02',
@@ -651,12 +652,21 @@ const App = () => {
                 <div className="project-card-inner">
                   <div className="project-top">
                     <span className="project-num">{p.num}</span>
-                    <MagneticWrap strength={0.4}>
-                      <a href={p.github} target="_blank" rel="noreferrer" className="project-link-icon" title="View on GitHub">↗</a>
-                    </MagneticWrap>
+                    <div className="project-links">
+                      <MagneticWrap strength={0.4}>
+                        <a href={p.github} target="_blank" rel="noreferrer" className="project-link-icon" title="View on GitHub">↗</a>
+                      </MagneticWrap>
+                    </div>
                   </div>
                   <h3>{p.title}</h3>
                   <p>{p.desc}</p>
+                  {p.liveDemo && (
+                    <div className="project-actions">
+                      <a href={p.liveDemo} target="_blank" rel="noreferrer" className="project-live-btn">
+                        Live Demo
+                      </a>
+                    </div>
+                  )}
                   <div className="project-stack">
                     {p.stack.map((t) => <span key={t}>{t}</span>)}
                   </div>
