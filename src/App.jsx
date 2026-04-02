@@ -4,7 +4,10 @@ import profileImg from './assets/profile.jpeg'
 import studentHubImg from './assets/StudentHub.jpeg'
 import notesImg from './assets/notes.jpeg'
 import photoEditorImg from './assets/photoedit.jpeg'
-import resumePdf from './assets/KrishlayNEW.pdf'
+import webathonImg from './assets/webathon.jpeg'
+import artOfWebImg from './assets/art of web.jpeg'
+import appathonImg from './assets/appexathon.jpeg'
+import resumePdf from './assets/krishlay.pdf'
 
 /* ─── Data ─── */
 const ROLES = ['Full Stack Developer', 'React.js Engineer', 'Next.js Developer', ]
@@ -31,6 +34,7 @@ const SKILLS = {
     items: ['Git & GitHub', 'Figma', 'VS Code', 'Postman', 'Responsive Design', 'API Integration'],
   },
 }
+
 
 const PROJECTS = [
   {
@@ -76,6 +80,7 @@ const NAV = [
   { id: 'about', label: 'About' },
   { id: 'skills', label: 'Skills' },
   { id: 'experience', label: 'Experience' },
+  { id: 'achievements', label: 'Achievements' },
   { id: 'projects', label: 'Projects' },
   { id: 'profiles', label: 'Profiles' },
   { id: 'contact', label: 'Contact' },
@@ -97,6 +102,36 @@ const STATS = [
 const MARQUEE_ITEMS = [
   'React.js', 'Next.js', 'Node.js', 'Express.js', 'MongoDB',
   'MySQL', 'REST APIs', 'Tailwind CSS', 'Git', 'Figma', 'JavaScript', 'TypeScript',
+]
+
+const ACHIEVEMENTS = [
+  {
+    type: 'Hackathon Winner',
+    title: '1st Place - Campus Innovation Hackathon',
+    organizer: 'Tula\'s Institute',
+    year: '2024',
+    details: 'Built a student service discovery platform with live location search and mentor-guided recommendations.',
+    photo: webathonImg,
+    certificateUrl: webathonImg,
+  },
+  {
+    type: '1st Prize',
+    title: 'TechFusion - UTKRISHT 2025',
+    organizer: "Tula's Institute, Dehradun",
+    year: '2025',
+    details: 'Secured 1st place in Website Development at UTKRISHT 2025 (TechFusion), Tula\'s Institute.',
+    photo: artOfWebImg,
+    certificateUrl: artOfWebImg,
+  },
+  {
+    type: 'Appathon Winner',
+    title: '1st Place - Appathon',
+    organizer: "Tula's Institute, Dehradun",
+    year: '2024',
+    details: 'Thrilled to secure 1st place in Appathon. Grateful to mentors, teammates, and everyone who supported this journey of learning, innovation, and building.',
+    photo: appathonImg,
+    certificateUrl: appathonImg,
+  },
 ]
 
 /* ═════════════════════════════════════
@@ -630,6 +665,43 @@ const App = () => {
                 </div>
               </div>
             </article>
+          </div>
+        </section>
+
+        {/* ── Achievements ── */}
+        <section className="section reveal" id="achievements">
+          <div className="section-header">
+            <div className="section-label">Highlights</div>
+            <SplitText text="Awards & Hackathon Wins" />
+            <div className="section-line" />
+            <p className="section-desc">
+              A quick snapshot of hackathon achievements, awards, and winning certificates.
+            </p>
+          </div>
+          <div className="achievements-grid">
+            {ACHIEVEMENTS.map((item) => (
+              <TiltCard key={`${item.title}-${item.year}`} className="achievement-card stagger-child" intensity={6}>
+                <div className="achievement-top">
+                  <span className="achievement-type">{item.type}</span>
+                  <span className="achievement-year">{item.year}</span>
+                </div>
+                <div className="achievement-photo-slot">
+                  {item.photo ? (
+                    <img src={item.photo} alt={`${item.title} achievement`} className="achievement-photo" />
+                  ) : (
+                    <span>Add Achievement Photo</span>
+                  )}
+                </div>
+                <h3>{item.title}</h3>
+                <p className="achievement-org">{item.organizer}</p>
+                <p className="achievement-details">{item.details}</p>
+                <div className="achievement-actions">
+                  <a href={item.certificateUrl} target="_blank" rel="noreferrer" className="achievement-certificate-btn">
+                    View Certificate
+                  </a>
+                </div>
+              </TiltCard>
+            ))}
           </div>
         </section>
 
